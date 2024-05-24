@@ -30,7 +30,25 @@ namespace AssetRipper.Export.UnityProjects.Scripts
 			"Assembly-UnityScript.dll",
 			"Assembly-UnityScript",
 			"Assembly-UnityScript-firstpass.dll",
-			"Assembly-UnityScript-firstpass"
+			"Assembly-UnityScript-firstpass",
+			"Apple.dll",
+			"Apple",
+			"ChannelPurchase.dll",
+			"ChannelPurchase",
+			"FacebookStore.dll",
+			"FacebookStore",
+			"Purchasing.Common.dll",
+			"Purchasing.Common",
+			"Security.dll",
+			"Security",
+			"Stores.dll",
+			"Stores",
+			"Tizen.dll",
+			"Tizen",
+			"UnityFbxPrefab.dll",
+			"UnityFbxPrefab",
+			"UnityStore.dll",
+			"UnityStore"
 		};
 
 		public static bool IsPredefinedAssembly(string assemblyName)

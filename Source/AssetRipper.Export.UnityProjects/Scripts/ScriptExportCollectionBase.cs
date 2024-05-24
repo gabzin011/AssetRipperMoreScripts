@@ -67,6 +67,14 @@ public abstract class ScriptExportCollectionBase : ExportCollection
 			or "Assembly - CSharp - firstpass"
 			or "Assembly-UnityScript-firstpass"
 			or "Assembly - UnityScript - firstpass"
+			or "Apple"
+			or "ChannelPurchase"
+			or "FacebookStore"
+			or "Purchasing.Common"
+			or "Security"
+			or "Tizen"
+			or "UnityFbxPrefab"
+			or "UnityStore"
 			? "Plugins"
 			: "Scripts";
 	}
