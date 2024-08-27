@@ -440,6 +440,21 @@ partial class Localization
 	public static string ExportPreparing => Get("export_preparing");
 	
 	/// <summary>
+	/// Export Primary Content
+	/// </summary>
+	public static string ExportPrimaryContent => Get("export_primary_content");
+	
+	/// <summary>
+	/// Export Unity Project
+	/// </summary>
+	public static string ExportUnityProject => Get("export_unity_project");
+	
+	/// <summary>
+	/// Failed Files
+	/// </summary>
+	public static string FailedFiles => Get("failed_files");
+	
+	/// <summary>
 	/// Format
 	/// </summary>
 	public static string Format => Get("format");

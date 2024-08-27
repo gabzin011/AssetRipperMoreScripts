@@ -185,7 +185,8 @@ public static class WebApplicationLauncher
 		});
 
 		//Commands
-		app.MapPost("/Export", Commands.HandleCommand<Commands.Export>);
+		app.MapPost("/Export/UnityProject", Commands.HandleCommand<Commands.ExportUnityProject>);
+		app.MapPost("/Export/PrimaryContent", Commands.HandleCommand<Commands.ExportPrimaryContent>);
 		app.MapPost("/LoadFile", Commands.HandleCommand<Commands.LoadFile>);
 		app.MapPost("/LoadFolder", Commands.HandleCommand<Commands.LoadFolder>);
 		app.MapPost("/Reset", Commands.HandleCommand<Commands.Reset>);
@@ -193,6 +194,7 @@ public static class WebApplicationLauncher
 		//Dialogs
 		app.MapGet("/Dialogs/SaveFile", Dialogs.SaveFile.HandleGetRequest);
 		app.MapGet("/Dialogs/OpenFolder", Dialogs.OpenFolder.HandleGetRequest);
+		app.MapGet("/Dialogs/OpenFolders", Dialogs.OpenFolders.HandleGetRequest);
 		app.MapGet("/Dialogs/OpenFile", Dialogs.OpenFile.HandleGetRequest);
 		app.MapGet("/Dialogs/OpenFiles", Dialogs.OpenFiles.HandleGetRequest);
 

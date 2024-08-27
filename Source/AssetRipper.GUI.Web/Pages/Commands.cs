@@ -42,29 +42,29 @@ public static class Commands
 		{
 			IFormCollection form = await request.ReadFormAsync();
 
-			string? path;
+			string[]? paths;
 			if (form.TryGetValue("Path", out StringValues values))
 			{
-				path = values;
+				paths = values;
 			}
 			else if (Dialogs.Supported)
 			{
-				Dialogs.OpenFolder.GetUserInput(out path);
+				Dialogs.OpenFolders.GetUserInput(out paths);
 			}
 			else
 			{
 				return CommandsPath;
 			}
 
-			if (!string.IsNullOrEmpty(path))
+			if (paths is { Length: > 0 })
 			{
-				GameFileLoader.LoadAndProcess([path]);
+				GameFileLoader.LoadAndProcess(paths);
 			}
 			return null;
 		}
 	}
 
-	public readonly struct Export : ICommand
+	public readonly struct ExportUnityProject : ICommand
 	{
 		static async Task<string?> ICommand.Execute(HttpRequest request)
 		{
@@ -82,7 +82,31 @@ public static class Commands
 
 			if (!string.IsNullOrEmpty(path))
 			{
-				GameFileLoader.Export(path);
+				GameFileLoader.ExportUnityProject(path);
+			}
+			return null;
+		}
+	}
+
+	public readonly struct ExportPrimaryContent : ICommand
+	{
+		static async Task<string?> ICommand.Execute(HttpRequest request)
+		{
+			IFormCollection form = await request.ReadFormAsync();
+
+			string? path;
+			if (form.TryGetValue("Path", out StringValues values))
+			{
+				path = values;
+			}
+			else
+			{
+				return CommandsPath;
+			}
+
+			if (!string.IsNullOrEmpty(path))
+			{
+				GameFileLoader.ExportPrimaryContent(path);
 			}
 			return null;
 		}
