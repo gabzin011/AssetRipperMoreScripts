@@ -48,7 +48,9 @@ namespace AssetRipper.Export.UnityProjects.Scripts
 			"UnityFbxPrefab.dll",
 			"UnityFbxPrefab",
 			"UnityStore.dll",
-			"UnityStore"
+			"UnityStore",
+			"InsaneGabzinsCustomMap.dll",
+			"InsaneGabzinsCustomMap"
 		};
 
 		public static bool IsPredefinedAssembly(string assemblyName)
